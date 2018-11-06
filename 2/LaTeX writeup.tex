@@ -1,9 +1,10 @@
 \documentclass[12pt, twoside, a4paper]{article}
+\usepackage[left = 20mm, top = 20mm]{geometry}
 \usepackage{amsmath,amsthm,amssymb,amsfonts}
 \usepackage[makeroom]{cancel}
 \newcommand{\Gen}{\mathcal{L}}
 \usepackage[parfill]{parskip}
-
+\usepackage{graphicx}
 
 \begin{document}
 
@@ -89,6 +90,10 @@ from which we can deduce that
 \[N_t = 1 \implies t = \mathbb{E} (T) = 2 \bigg(1 - \frac{1}{L} \bigg) \, \text{,}
 \]
 which is in line with our results from part b).
+
+\subsection*{d}
+\includegraphics[width=17cm]{Kingman}
+
 \section{Orstein-Uhlenbeck process}
 \subsection*{a}
 Let $f(X_t) = X_t$, then $f'(X_t) = 1$ and $f''(X_t) = 0$, and using the evolution equation, 
@@ -114,6 +119,9 @@ which can be solved to give $\mathbb{E} [X_t^2] = \sigma ^2/2 \alpha + Be^{-2 \a
 v(t) = \mathbb{E} [X_t^2] - (\mathbb{E} [X_t])^2 &= \frac{\sigma ^2}{2 \alpha} + Be^{-2 \alpha t} - (Ae^{- \alpha t})^2\\
 &= \frac{\sigma ^2}{2 \alpha} + Ce^{-2 \alpha t}
 \end{align*}
+
+\subsection*{c}
+\includegraphics[width = 170mm]{O-U}
 
 \section{Moran model and Wright-Fisher diffusion}
 \subsection*{a}
@@ -176,6 +184,35 @@ m_2(t) = \mathbb{E} [N_t^2] = Ln + Ae^{\frac{2t}{1-L}}
 
 In the scaling limit $t \to \infty$, the exponential term vanishes so we just have $m_2(t) \to Ln \,$. 
 
+\subsection*{f}
+\includegraphics[width = 170mm]{moran}
+
+\section{Barab\'asi-Albert Model}
+
+\subsection*{a}
+\includegraphics[width = 170mm]{tail}
+
+\subsection*{b}
+\includegraphics[width = 170mm]{knn}
+
+The graphs appear to be typically disassortative. It is apparent that $k_{nn}(k)$ is high if $k$ is low and vice versa, hence they are disassortative. While the plot showed a lot more spread in the $t \geq 20$ range for lower numbers of realisations, running it over 1000 realisations seemed to help smooth out the plot a great amount. 
+
+\section{Erd\"os R\'enyi Random Graphs}
+
+\subsection*{a}
+\includegraphics[width = 170mm]{lc100}
+
+\includegraphics[width = 170mm]{lc1000}
+
+\subsection*{b}
+\includegraphics[width = 170mm]{clustering}
+
+The theoretical limit p line fits a lot better when we allow for higher values of $z$. 
+
+\subsection*{c}
+\includegraphics[width = 170mm]{degreedistribution}
+
+I interpreted this question as collate all 20 realisations together to obtain one single degree distribution $p(k)$ but then discovered that some people have plotted all the realisations separately. Therefore I settled and added some error bars. 
 
 
 
